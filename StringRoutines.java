@@ -20,6 +20,7 @@ package routines;
  */
 public class StringRoutines {
 
+
 	/**
 	 * getStringPosition: returns the substring of a string between two positions.
 	 * 
@@ -275,4 +276,92 @@ public class StringRoutines {
 		}
 	}
 
+	/**
+	 * partialString: returns the part of a field between the first position (0), and last position.
+	 * 
+	 * 
+	 * {talendTypes} String
+	 * 
+	 * {Category} User Defined
+	 * 
+	 * {param} string(fieldString) input: The full field that contains the partial String.
+	 *
+	 * {param} int(startPos) input: The starting position of the partial string
+	 *   
+	 * {param} int(endPos) input: The ending position of the partial string
+	 * 
+	 * {example} partialString("inputField",0,3) # "par".
+	 */
+	public static String partialString(String fieldString, int startPos, int endPos) {
+		if(fieldString == null)
+			return null;
+		else
+			return fieldString.substring(startPos, endPos);
+	}
+
+	/**
+	 * partialString: returns the part of a field between the first position (0), and the first
+	 * occurrence of a character.
+	 * 
+	 * 
+	 * {talendTypes} String
+	 * 
+	 * {Category} User Defined
+	 * 
+	 * {param} string(fieldString) input: The full field that contains the partial String.
+	 *
+	 * {param} int(startPos) input: The starting position of the partial string
+	 *   
+	 * {param} String("endPos") input: The first occurrence of a character that will end the partial string
+	 * 
+	 * {example} partialString("inputFi3ld",0,"3") # "inputFi3".
+	 */
+	public static String partialString(String fieldString, int startPos, String endPos) {
+		if(fieldString == null)
+			return null;
+		else if(!fieldString.contains(endPos))
+			return "endPos not found";
+		else{
+			try{
+				return fieldString.substring(startPos, fieldString.indexOf(endPos));
+			} catch (Exception e){
+				return "endPos found before startPos";
+			}
+
+		}
+
+	}
+
+	/**
+	 * partialString: returns the part of a field between the first position (0), and the first
+	 * occurrence of a character.
+	 * 
+	 * 
+	 * {talendTypes} String
+	 * 
+	 * {Category} User Defined
+	 * 
+	 * {param} string(fieldString) input: The full field that contains the partial String.
+	 *
+	 * {param} String("startChar") input: The first occurrence of a character that starts
+	 * the partial String
+	 *   
+	 * {param} int(endPos) input: The ending position of the partial string
+	 * 
+	 * {example} partialString("inputFi3ld","3",10) # "3ld".
+	 */
+	public static String partialString(String fieldString, String startPos, int endPos) {
+		if(fieldString == null)
+			return null;
+		else if(!fieldString.contains(startPos))
+			return "startPos not found";
+		else if(fieldString.length() >= endPos){
+			try{
+				return fieldString.substring(fieldString.indexOf(startPos)+1, endPos);
+			} catch (Exception e){
+				return "endPos found before startPos";
+			}
+		}else
+			return "Make endPos smaller";
+	}
 }
