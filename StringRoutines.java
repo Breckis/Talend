@@ -364,5 +364,4 @@ public class StringRoutines {
 		}else
 			return "Make endPos smaller";
 	}
-	public static void testRoutine(){}
 }
