@@ -153,4 +153,5 @@ public class DateRoutines {
     		return "";
     	}
     }
+public static String testDate(){ return null;}
 }
