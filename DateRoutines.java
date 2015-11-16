@@ -159,7 +159,7 @@ public class DateRoutines {
 	 * 
 	 * {Category} User Defined
 	 * 
-	 * {param} string("inputDate") input: The string input date you want to add or subtract a date part of
+	 * {param} string(inputDate) input: The string input date you want to add or subtract a date part of
 	 *
 	 * {param} string("dateFormat") input: format that the date is in
 	 * 	 
@@ -203,7 +203,7 @@ public class DateRoutines {
 	 * 
 	 * {Category} User Defined
 	 * 
-	 * {param} string("inputDate") input: The string input date you want to add or subtract a date part of
+	 * {param} string(inputDate) input: The string input date you want to add or subtract a date part of
 	 * 	 
 	 * {param} string("datePart") input: The part of the date you want to change ex: "yyyy" or "MM"
 	 * 
