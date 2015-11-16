@@ -43,16 +43,15 @@ public class DateRoutines {
 	public static String convertDate(String inputDate, String inputDateFormat
 			,String outputDateFormat) {
 		if(inputDate != null && inputDate.replaceAll("\\W", "").length()>0){
-			DateFormat inDateFormat = new SimpleDateFormat(inputDateFormat);
-			DateFormat outDateFormat = new SimpleDateFormat(outputDateFormat);
 			try{
+				DateFormat inDateFormat = new SimpleDateFormat(inputDateFormat);
+				DateFormat outDateFormat = new SimpleDateFormat(outputDateFormat);
 				Date inDate = inDateFormat.parse(inputDate);
 				String outDate = outDateFormat.format(inDate);
 				return(outDate);
 			}
 			catch(ParseException e){
-				e.printStackTrace();
-				return "Date Error";
+				return "" + e;
 			}
 		} else {
 			return "";
@@ -76,16 +75,15 @@ public class DateRoutines {
 	 */
 	public static String convertDate(String inputDate, String inputDateFormat) {
 		if(inputDate != null && inputDate.replaceAll("\\W", "").length()>0){
-			DateFormat inDateFormat = new SimpleDateFormat(inputDateFormat);
-			DateFormat outDateFormat = new SimpleDateFormat("yyyyMMdd");
 			try{
+				DateFormat inDateFormat = new SimpleDateFormat(inputDateFormat);
+				DateFormat outDateFormat = new SimpleDateFormat("yyyyMMdd");
 				Date inDate = inDateFormat.parse(inputDate);
 				String outDate = outDateFormat.format(inDate);
 				return(outDate);
 			}
 			catch(ParseException e){
-				e.printStackTrace();
-				return "Date Error";
+				return "" + e;
 			}
 		} else {
 			return "";
@@ -110,16 +108,15 @@ public class DateRoutines {
 	 */
 	public static String convertExcelDate(String inputDate, String outputDateFormat) {
 		if(inputDate != null && inputDate.replaceAll("\\W", "").length()>0){
-			DateFormat inDateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
-			DateFormat outDateFormat = new SimpleDateFormat(outputDateFormat);
 			try{
+				DateFormat inDateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+				DateFormat outDateFormat = new SimpleDateFormat(outputDateFormat);
 				Date inDate = inDateFormat.parse(inputDate);
 				String outDate = outDateFormat.format(inDate);
 				return(outDate);
 			}
 			catch(ParseException e){
-				e.printStackTrace();
-				return "Date Error";
+				return "" + e;
 			}
 		} else {
 			return "";
@@ -140,16 +137,15 @@ public class DateRoutines {
 	 */
 	public static String convertExcelDate(String inputDate) {
 		if(inputDate != null && inputDate.replaceAll("\\W", "").length()>0){
+			try{
 			DateFormat inDateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
 			DateFormat outDateFormat = new SimpleDateFormat("yyyyMMdd");
-			try{
 				Date inDate = inDateFormat.parse(inputDate);
 				String outDate = outDateFormat.format(inDate);
 				return(outDate);
 			}
 			catch(ParseException e){
-				e.printStackTrace();
-				return "Date Error";
+				return "" + e;
 			}
 		} else {
 			return "";
