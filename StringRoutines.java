@@ -374,14 +374,9 @@ public class StringRoutines {
 	 * 
 	 * {Category} User Defined
 	 * 
-	 * {param} string(fieldString) input: The full field that contains the partial String.
+	 * {param} string(fieldName) input: The full name field.
 	 *
-	 * {param} String("startChar") input: The first occurrence of a character that starts
-	 * the partial String
-	 *   
-	 * {param} int(endPos) input: The ending position of the partial string
-	 * 
-	 * {example} partialString("inputFi3ld","3",10) # "3ld".
+	 * {example} getLastName("Edgar A. Poe") # "Poe".
 	 */
 	public static String getLastName(String nameField){
 		if (nameField != null) {
