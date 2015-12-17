@@ -364,8 +364,8 @@ public class StringRoutines {
 		}else
 			return "Make endPos smaller";
 	}
-	
-	
+
+
 	/**
 	 * getLastName: returns the last name from a full name field.
 	 * 
@@ -374,17 +374,71 @@ public class StringRoutines {
 	 * 
 	 * {Category} User Defined
 	 * 
-	 * {param} string(fieldName) input: The full name field.
+	 * {param} string(fieldString) input: The full field that contains the partial String.
 	 *
-	 * {example} getLastName("Edgar A. Poe") # "Poe".
+	 * {param} String("startChar") input: The first occurrence of a character that starts
+	 * the partial String
+	 *   
+	 * {param} int(endPos) input: The ending position of the partial string
+	 * 
+	 * {example} partialString("inputFi3ld","3",10) # "3ld".
 	 */
 	public static String getLastName(String nameField){
-		if (nameField != null) {
+		if (nameField != null && nameField.length() > 1) {
 			nameField.trim();
 			String[] lastName = nameField.split("\\s"); 
 			return lastName[lastName.length -1];
 		} else {
 			return "";
 		}
+	}
+
+	/**
+	 * getLastName: returns the first X digits from the last name.
+	 * 
+	 * 
+	 * {talendTypes} String
+	 * 
+	 * {Category} User Defined
+	 * 
+	 * {param} string(fieldName) input: The full name field.
+	 *
+	 * {example} getLastName("Edgar A. Poe", 2) # "Po".
+	 */
+	public static String getLastName(String nameField, int digits){
+		if (nameField != null) {
+			nameField.trim();
+			String[] lastName = nameField.split("\\s"); 
+			if(lastName[lastName.length -1].length() >= digits) 
+				return lastName[lastName.length -1].substring(0, digits);
+			else
+				return lastName[lastName.length -1].substring(0, lastName[lastName.length -1].length());
+		} else {
+			return "";
+		}
+	}
+	
+	/**
+	 * addLeadingZeros: Adds a specified amount of zero's to a field.
+	 * 
+	 * 
+	 * {talendTypes} String
+	 * 
+	 * {Category} User Defined
+	 * 
+	 * (param) int(fieldLength) input: The number of digits in the field
+	 * 
+	 * {param} string(fieldName) input: The full name field.
+	 *
+	 * {example} addLeadingZeros(10, "10050") # 0000010050.
+	 */
+	public static String addLeadingZeros(int fieldLength, String fieldName){
+		int l = fieldName.length();
+		if(l < fieldLength){
+			for(int i = fieldLength-l; i >0; i--)
+				fieldName = "0"+fieldName;
+			return fieldName;
+		} else
+			return fieldName;
 	}
 }
