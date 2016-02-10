@@ -441,7 +441,6 @@ public class StringRoutines {
 		} else
 			return fieldName;
 	}
-<<<<<<< HEAD
 	
 	/**
 	 * splitAddress: Takes an address field and breaks it into the parts.
@@ -463,6 +462,5 @@ public class StringRoutines {
 			multiAddress[i] = multiAddress[i].trim();
 		return multiAddress;
 	}
-=======
->>>>>>> a6bd68d24ac912b935c9ad21d5cf68d900506ac6
+
 }
