@@ -8,6 +8,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( DateRoutines.convertDate(DateRoutines.addDatePart("03/08/1990","MM/dd/yyyy", "yyyy", "3" ),"MM/dd/yyyy"));
+        System.out.println(PolicyImportCleaning.cleanField("123 main St co company name inc"));
     }
 }
